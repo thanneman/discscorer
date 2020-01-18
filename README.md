@@ -1,9 +1,9 @@
 # score-keeper-capstone-server
 
 Disc Golf Score Keeper was created by Travis Hanneman using the following tools:
-* Front-End:HTML5, CSS3, JavaScript, React
-* Back-End:Node.js, Express.js, PostgreSQL, Mocha and Chai for testing
-* Development Enviroment:Heroku
+* Front-End: HTML5, CSS3, JavaScript, React
+* Back-End: Node.js, Express.js, PostgreSQL, Mocha and Chai for testing
+* Development Enviroment: Heroku
 
 ## Working Prototype
 Coming soon
@@ -83,9 +83,9 @@ Previous Game/Search Result Action | Search Error
     * note message
 
 ## Technology
-* Front-End:HTML5, CSS3, JavaScript, React
-* Back-End:Node.js, Express.js, PostgreSQL, Mocha and Chai for testing
-* Development Enviroment:Heroku
+* Front-End: HTML5, CSS3, JavaScript, React
+* Back-End: Node.js, Express.js, PostgreSQL, Mocha and Chai for testing
+* Development Enviroment: Heroku
 
 ## Responsive
 App is built to be usable on mobile devices, as well as responsive across mobile, tablet, laptop, and desktop screen resolutions.
