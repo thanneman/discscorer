@@ -9,7 +9,7 @@ const jsonParser = express.json()
 
 const serializeGame = game => ({
   id: game.id,
-  course_name: game.course_name,
+  course_name: xss(game.course_name),
   date: game.date,
   course_par: game.course_par,
   front_score: game.front_score,
