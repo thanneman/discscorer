@@ -5,10 +5,10 @@ TRUNCATE
 
 INSERT INTO users (email, password)
 VALUES
-    ('demo@test.com', 'password'),
-    ('michael@dunder.com', 'password1'),
-    ('dwight@dunder.com', 'password2'),
-    ('pam@dunder.com', 'password3');
+    ('demo@test.com', '$2a$12$obaE1yL0BOi1d0.5eZyGD.iu2EpZGd4irB7T16A2OSalb2Xr1GNti'),
+    ('michael@dunder.com', '$2a$12$kPlcGrgBnA9fgEsFIXrcy.amwfgpuesgdU1JVZJREr7EJ6nR8y3GW'),
+    ('dwight@dunder.com', '$2a$12$NmB5t2jECWsY0iVb.uYc9.XncOiujzK5nfVbBxTJKVhqs4G1ooaGC'),
+    ('pam@dunder.com', '$2a$12$pjVT2qTnWcGSX5NeSC8U4uQbacHYTR6VJpzi/u0cfzieqdYIFhPlG');
 
 INSERT INTO games (user_id, course_name, date, course_par, front_score, back_score, notes) VALUES
     (1, 'Papago Disc Golf Course', '2019-01-03T00:00:00.000Z', 35, 20, 20, 'Lorem ipsum dolor sit amet, consectetur adipiscing.'),
