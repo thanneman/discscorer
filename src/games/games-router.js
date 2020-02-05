@@ -22,13 +22,14 @@ gamesRouter
   .get((req, res, next) => {
     GamesService.getAllGames(req.app.get('db'))
       .then(games => {
+        console.log(games)
         res.json(games.map(serializeGame))
       })
       .catch(next)
   })
   .post(requireAuth, jsonParser, (req, res, next) => {
     const { course_name, course_par, front_score, back_score } = req.body
-    const newGame = { course_name, course_par, front_score, back_score }
+    const newGame = { course_name, course_par, front_score, back_score, notes }
 
     for (const [key, value] of Object.entries(newGame))
       if (value == null)
