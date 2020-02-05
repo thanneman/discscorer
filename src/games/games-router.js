@@ -27,8 +27,8 @@ gamesRouter
       .catch(next)
   })
   .post(requireAuth, jsonParser, (req, res, next) => {
-    const { course_name, course_par, front_score, back_score, notes } = req.body
-    const newGame = { course_name, course_par, front_score, back_score, notes }
+    const { course_name, course_par, front_score, back_score } = req.body
+    const newGame = { course_name, course_par, front_score, back_score }
 
     for (const [key, value] of Object.entries(newGame))
       if (value == null)
@@ -38,6 +38,7 @@ gamesRouter
 
     newGame.user_id = req.user.id
 
+    console.log(newGame)
     GamesService.insertGame(
       req.app.get('db'),
       newGame
@@ -48,8 +49,11 @@ gamesRouter
           .location(path.posix.join(req.originalUrl, `/${game.id}`))
           .json(serializeGame(game))
       })
-      .catch(next)
-        
+      .catch((err) => {
+        console.log('Some err', err )
+        next();
+      })
+      
   })
 
 gamesRouter
