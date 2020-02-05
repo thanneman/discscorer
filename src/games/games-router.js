@@ -27,8 +27,8 @@ gamesRouter
       .catch(next)
   })
   .post(requireAuth, jsonParser, (req, res, next) => {
-    const { course_name, course_par, front_score, back_score } = req.body
-    const newGame = { course_name, course_par, front_score, back_score }
+    const { course_name, course_par, front_score, back_score, notes } = req.body
+    const newGame = { course_name, course_par, front_score, back_score, notes }
 
     for (const [key, value] of Object.entries(newGame))
       if (value == null)
