@@ -32,12 +32,10 @@ app.get('/api/*', (req, res) => {
 });
 
 app.use(function errorHandler(error, req, res, next) {
-    console.log(error)
     let response
     if (NODE_ENV === 'production') {
         response = { error: { message: 'server error' } }
     } else {
-        console.log(error)
         response = { message: error.message, error }
     }
     res.status(500).json(response)
