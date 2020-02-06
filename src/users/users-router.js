@@ -18,7 +18,7 @@ const serializeUser = user => ({
 
 const serializeGame = game => ({
     id: game.id,
-    course_name: game.course_name,
+    course_name: xss(game.course_name),
     date: game.date,
     course_par: game.course_par,
     front_score: game.front_score,
@@ -130,8 +130,8 @@ usersRouter
         res.json(res.game)
     })
     .post(requireAuth, jsonParser, (req, res, next) => {
-        const { course_name, course_par, front_score, back_score } = req.body
-        const newGame = { course_name, course_par, front_score, back_score }
+        const { course_name, course_par, front_score, back_score, notes } = req.body
+        const newGame = { course_name, course_par, front_score, back_score, notes }
 
         for (const [key, value] of Object.entries(newGame))
             if (value == null)
@@ -198,21 +198,24 @@ usersRouter
             .catch(next)
     })
 
-    /*
-    .patch(jsonParser, (req, res, next) => {
-        const { course_name, course_par, front_score, back_score } = req.body
-        const gameToUpdate = { course_name, course_par, front_score, back_score }
-
-        GamesService.updateGame(
-            req.app.get('db'),
-            req.params.game_id,
-            gameToUpdate
-        )
-            .then(numRowsAffected => {
-                res.status(204).end()
+usersRouter
+    .route('/:user_id/stats')
+    .all(requireAuth)
+    .all((req, res, next) => {
+        const { user_id, course_name, front_score, back_score } = req.params;
+        UsersService.getHighestStat(req.app.get('db'), user_id, course_name, front_score, back_score)
+            .then(data => {
+                if (!data) {
+                    return res
+                        .send({ error: { message: `No statistic recorded yet.` } })
+                }
+                res.data = data
+                next()
             })
             .catch(next)
     })
-    */
+    .get((req, res) => {
+        res.json(res.data)
+    })
 
 module.exports = usersRouter

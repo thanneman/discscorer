@@ -75,6 +75,15 @@ const UsersService = {
             .select('*')
             .where('user_id', id)
     },
+    /*
+    getHighestStat(knex, id) {
+        return knex('games')
+            //.from('games')
+            .where('user_id', id)
+            .select('course_name').count('*').groupBy('course_name').orderBy('count', 'desc').fist()
+            .select('front_score').avg('front_score').groupBy('front_score').orderBy('count', 'desc').first()
+            .select('back_score').avg('back_score').groupBy('back_score').orderBy('count', 'desc').first()
+    },*/
 }
 
 module.exports = UsersService
