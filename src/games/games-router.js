@@ -66,8 +66,8 @@ gamesRouter
             error: { message: `Game does not exist` }
           })
         }
-        res.game = game //save the game for the next middleware
-        next() //don't forget to call next so the next middleware happens
+        res.game = game
+        next()
       })
       .catch(next)
   })
