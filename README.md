@@ -4,7 +4,9 @@ Discscore is an app that allows users to quickly track their disc golf games, sc
 
 ## Working Prototype
 [Sever Repo](https://github.com/thanneman/score-keeper-capstone-server)
+
 [React Client Repo](https://github.com/thanneman/score-keeper-capstone-client)
+
 [Live App](https://discscore.now.sh/)
 
 ## User Stores
@@ -52,26 +54,26 @@ Landing/Login Page | Sign Up Page
 Dashboard/Search Page | New Game
 ![Dashboard](/github-images/wireframes/dashboard.jpg) | ![New Game](/github-images/wireframes/newgame.jpg)
 Previous Game/Search Result Action | Search Error
-![Previous Game](/github-images/wireframes/prevgame.jpg) | ![Search Error](/github-images/wireframes/searcherror.jpg)
+![Previous Game](/github-images/wireframes/prevgame.jpg) |
 
 ## Screenshots
 
 ### **Landing/Login Page**
 #### POST `api/auth/login`
-<span<img src="./github-images/screenshots/landing.png" alt="Landing Page'>
+<img src="./github-images/screenshots/landing.png" alt="Landing Page'>
 
 ### **Sign Up Page**
 #### POST `api/users`
-<span<img src="./github-images/screenshots/signup.png" alt="Sign Up Page'>
+<img src="./github-images/screenshots/signup.png" alt="Sign Up Page'>
 
 ### **Dashboard**
 #### GET `api/users/:user_id/games`
 #### DELETE `api/users/:user_id/game/:game_id`
-<span<img src="./github-images/screenshots/dashboard.png" alt="Dashboard Page'>
+<img src="./github-images/screenshots/dashboard.png" alt="Dashboard Page'>
 
 ### **Add New Game**
 #### POST `api/users/:user_id/games`
-<span<img src="./github-images/screenshots/signup.png" alt="Sign Up Page'>
+<img src="./github-images/screenshots/signup.png" alt="Sign Up Page'>
 
 ## API Documentation
 
@@ -126,7 +128,6 @@ Allows a logged-in user to track a game with their relevant data.
 ```JSON
 {
     "id": 24,
-    "user_id": 5,
     "course_name": "Pebble Beach",
     "date": "2020-02-07 15:33:49",
     "course_par": 36,
