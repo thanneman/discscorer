@@ -73,7 +73,7 @@ Previous Game/Search Result Action |
 
 ### **Add New Game**
 #### POST `api/users/:user_id/games`
-<img src="/github-images/screenshots/signup.png" alt="Sign Up Page">
+<img src="/github-images/screenshots/newgame.png" alt="Sign Up Page">
 
 ## API Documentation
 
