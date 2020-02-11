@@ -53,27 +53,27 @@ Landing/Login Page | Sign Up Page
 ![Landing/Login Page](/github-images/wireframes/landing.jpg)  |  ![Sign Up Page](/github-images/wireframes/signup.jpg)
 Dashboard/Search Page | New Game
 ![Dashboard](/github-images/wireframes/dashboard.jpg) | ![New Game](/github-images/wireframes/newgame.jpg)
-Previous Game/Search Result Action | Search Error
+Previous Game/Search Result Action |
 ![Previous Game](/github-images/wireframes/prevgame.jpg) |
 
 ## Screenshots
 
 ### **Landing/Login Page**
 #### POST `api/auth/login`
-<img src="./github-images/screenshots/landing.png" alt="Landing Page'>
+<img src="/github-images/screenshots/landing.png" alt="Landing Page">
 
 ### **Sign Up Page**
 #### POST `api/users`
-<img src="./github-images/screenshots/signup.png" alt="Sign Up Page'>
+<img src="/github-images/screenshots/signup.png" alt="Sign Up Page">
 
 ### **Dashboard**
 #### GET `api/users/:user_id/games`
 #### DELETE `api/users/:user_id/game/:game_id`
-<img src="./github-images/screenshots/dashboard.png" alt="Dashboard Page'>
+<img src="/github-images/screenshots/dashboard.png" alt="Dashboard Page">
 
 ### **Add New Game**
 #### POST `api/users/:user_id/games`
-<img src="./github-images/screenshots/signup.png" alt="Sign Up Page'>
+<img src="/github-images/screenshots/signup.png" alt="Sign Up Page">
 
 ## API Documentation
 
