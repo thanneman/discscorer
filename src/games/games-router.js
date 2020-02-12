@@ -17,6 +17,7 @@ const serializeGame = game => ({
   notes: xss(game.notes),
 })
 
+// All users GET, POST
 gamesRouter
   .route('/')
   .get((req, res, next) => {
@@ -47,40 +48,6 @@ gamesRouter
           .status(201)
           .location(path.posix.join(req.originalUrl, `/${game.id}`))
           .json(serializeGame(game))
-      })
-      .catch(next)
-      
-  })
-
-gamesRouter
-  .route('/:game_id')
-  .all(requireAuth)
-  .all((req, res, next) => {
-    GamesService.getById(
-      req.app.get('db'),
-      req.params.game_id
-    )
-      .then(game => {
-        if (!game) {
-          return res.status(404).json({
-            error: { message: `Game does not exist` }
-          })
-        }
-        res.game = game
-        next()
-      })
-      .catch(next)
-  })
-  .get((req, res, next) => {
-    res.json(serializeGame(res.game))
-  })
-  .delete((req, res, next) => {
-    GamesService.deleteGame(
-      req.app.get('db'),
-      req.params.game_id
-    )
-      .then(() => {
-        res.status(204).end()
       })
       .catch(next)
   })

@@ -25,7 +25,6 @@ const serializeGame = game => ({
     back_score: game.back_score,
     notes: xss(game.notes),
   })
-
 // All users
 usersRouter
     .route('/')
@@ -196,26 +195,6 @@ usersRouter
                 res.status(204).end()
             })
             .catch(next)
-    })
-
-usersRouter
-    .route('/:user_id/stats')
-    .all(requireAuth)
-    .all((req, res, next) => {
-        const { user_id, course_name, front_score, back_score } = req.params;
-        UsersService.getHighestStat(req.app.get('db'), user_id, course_name, front_score, back_score)
-            .then(data => {
-                if (!data) {
-                    return res
-                        .send({ error: { message: `No statistic recorded yet.` } })
-                }
-                res.data = data
-                next()
-            })
-            .catch(next)
-    })
-    .get((req, res) => {
-        res.json(res.data)
     })
 
 module.exports = usersRouter

@@ -27,7 +27,7 @@ This app has two types of users; visitor and logged-in user
 * I want to see how to start a new game card
 * So I can keep track of my games and courses
 
-#### Previous Games/Search Result Action
+#### Previous Games
 * As a logged-in user
 * I want to see my previous game card details (course, scores, notes)
 * So I can see a previous game card
@@ -37,24 +37,13 @@ This app has two types of users; visitor and logged-in user
 * I want to start a new game card
 * So I can capture details about my game (course, scores, notes)
 
-#### Search Error
-* As a logged-in user
-* I want to know if there is an error in my search
-* So I can search for a certain game card(s)
-
-#### Search Results
-* As a logged-in user
-* I want to look for and click on the item from my search
-* So I can see a previous game card
 
 ## Wireframes
 Landing/Login Page | Sign Up Page
 :-------------------------:|:-------------------------:
 ![Landing/Login Page](/github-images/wireframes/landing.jpg)  |  ![Sign Up Page](/github-images/wireframes/signup.jpg)
-Dashboard/Search Page | New Game
+Dashboard | New Game
 ![Dashboard](/github-images/wireframes/dashboard.jpg) | ![New Game](/github-images/wireframes/newgame.jpg)
-Previous Game/Search Result Action |
-![Previous Game](/github-images/wireframes/prevgame.jpg) |
 
 ## Screenshots
 
@@ -166,5 +155,3 @@ Install node modules `npm install`
 Run the tests `npm test`
 
 Start the application `npm start`
-
-Start nodemon for the application `npm run dev`

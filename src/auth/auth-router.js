@@ -4,6 +4,7 @@ const AuthService = require('./auth-service')
 const authRouter = express.Router()
 const jsonBodyParser = express.json()
 
+// Check credentials on login/sign up
 authRouter
     .post('/login', jsonBodyParser, (req, res, next) => {
         const { email, password } = req.body
