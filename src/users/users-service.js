@@ -74,7 +74,7 @@ const UsersService = {
             .from('games')
             .select('*')
             .where('user_id', id)
-    },
+    }
 }
 
 module.exports = UsersService

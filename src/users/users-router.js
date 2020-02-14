@@ -197,4 +197,24 @@ usersRouter
             .catch(next)
     })
 
+usersRouter
+    .route('/:user_id/stats')
+    .all(requireAuth)
+    .all((req, res, next) => {
+        const { user_id, course_name } = req.params;
+        UsersService.getUserStats(req.app.get('db'), user_id, course_name)
+            .then(data => {
+                if (!data) {
+                    return res
+                        .send({ error: { message: `No statistic recorded yet.` } })
+                }
+                res.data = data
+                next()
+            })
+            .catch(next)
+    })
+    .get((req, res) => {
+        res.json(res.data)
+    })
+
 module.exports = usersRouter
